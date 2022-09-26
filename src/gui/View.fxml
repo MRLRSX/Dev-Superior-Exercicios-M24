@@ -4,10 +4,9 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.layout.AnchorPane?>
 
-
-<AnchorPane prefHeight="300.0" prefWidth="400.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/18">
+<AnchorPane prefHeight="300.0" prefWidth="400.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.ViewControler">
    <children>
-      <Button layoutX="148.0" layoutY="150.0" mnemonicParsing="false" text="Button" />
-      <Label layoutX="138.0" layoutY="109.0" prefHeight="17.0" prefWidth="117.0" text="CLICK HERE" />
+      <Button fx:id="btTest" layoutX="124.0" layoutY="138.0" mnemonicParsing="false" onAction="#onBtTestAction" text="Button" />
+      <Label layoutX="124.0" layoutY="102.0" prefHeight="17.0" prefWidth="117.0" text="CLICK HERE" />
    </children>
 </AnchorPane>
