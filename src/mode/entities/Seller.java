@@ -20,7 +20,6 @@ public class Seller implements Serializable{
 	public Seller() {};
 	
 	public Seller(Long id, String name, String email, LocalDateTime birthDate, Double baseSalary, Department department) {
-		super();
 		this.id = id;
 		this.name = name;
 		this.email = email;
