@@ -1,46 +1,29 @@
 package gui;
 
 import java.net.URL;
-import java.util.Locale;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.ResourceBundle;
 
-import gui.utils.Constrains;
+import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.Button;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
+import javafx.scene.control.ComboBox;
+import mode.entities.Person;
 
 public class ViewControler implements Initializable{
     
-	@FXML
-	private Button btSum;
-	
 	
 	@FXML
-	private TextField txtNumber1 ;
+    private ComboBox<Person> comboBoxPerson;
+    
+	private ObservableList<Person> obsList;
 	
-	@FXML
-	private TextField txtNumber2 ;
-	
-	@FXML
-	private Label labelResult;
-	
-	
-	@FXML
-	public void onBtSumAction() {
-		Locale.setDefault(Locale.US);
-		Double number1 = Double.parseDouble(txtNumber1.getText());
-		Double number2 = Double.parseDouble(txtNumber2.getText());
-		labelResult.setText(String.format("%.2f", number1 + number2));
-	}
-
+    
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-		Constrains.setTextFieldDouble(txtNumber1);
-		Constrains.setTextFieldDouble(txtNumber2);
-		Constrains.setTextFieldMaxLength(txtNumber1, 12);
-		Constrains.setTextFieldMaxLength(txtNumber2, 12);
+        List<Person> lista = new ArrayList<>();
+        lista.add(new Person(1, "lucasrocharsx@outlook.com", "Lucas Rocha dos Santos"));
 	}
 }
