@@ -24,6 +24,13 @@ public class ViewControler implements Initializable {
 
 	private ObservableList<Seller> obsList;
 
+	
+	@FXML
+	public void OnComboBoxSellerAction() {
+		Seller seller = comboBoxSeller.getSelectionModel().getSelectedItem();
+		System.out.println(seller);
+	}
+	
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
 		List<Seller> lista = new ArrayList<>();
