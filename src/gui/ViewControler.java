@@ -5,25 +5,32 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.ResourceBundle;
 
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.ComboBox;
-import mode.entities.Person;
+
+import mode.entities.Seller;
+import mode.entities.dao.DaoFactory;
+import mode.entities.dao.SellerDao;
 
 public class ViewControler implements Initializable{
     
 	
 	@FXML
-    private ComboBox<Person> comboBoxPerson;
+    private ComboBox<Seller> comboBoxPerson;
     
-	private ObservableList<Person> obsList;
+	private ObservableList<Seller> obsList;
 	
     
 
 	@Override
 	public void initialize(URL location, ResourceBundle resources) {
-        List<Person> lista = new ArrayList<>();
-        lista.add(new Person(1, "lucasrocharsx@outlook.com", "Lucas Rocha dos Santos"));
+        List<Seller> lista = new ArrayList<>();
+        SellerDao sDao = DaoFactory.createSellerDaoJDBC();
+        lista.addAll(sDao.findAll());
+        obsList = FXCollections.observableArrayList(lista);
+        comboBoxPerson.setItems(obsList);
 	}
 }
